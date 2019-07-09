@@ -1,31 +1,31 @@
 describe(`Array methods`, () => {
-  describe(`arrayIncludes2(array, thingToFind)`, () => {
+  describe(`arrayIncludes(numbers: Array<Number>, thingToFind: Number): Boolean`, () => {
     it(`returns false by default`, () => {
-      const actual = arrayIncludes2([])
+      const actual = arrayIncludes([])
       const expected = false
       expect(actual).to.eql(expected)
     })
 
     it(`returns true if item is first item in array`, () => {
-      const actual = arrayIncludes2([123], 123)
+      const actual = arrayIncludes([123], 123)
       const expected = true
       expect(actual).to.eql(expected)
     })
 
     it(`returns false if item isn't in array`, () => {
-      const actual = arrayIncludes2([123, 231, 234, 345], 999)
+      const actual = arrayIncludes([123, 231, 234, 345], 999)
       const expected = false
       expect(actual).to.eql(expected)
     })
 
     it(`returns false if item is in array`, () => {
-      const actual = arrayIncludes2([123, 231, 234, 999, 345], 999)
+      const actual = arrayIncludes([123, 231, 234, 999, 345], 999)
       const expected = true
       expect(actual).to.eql(expected)
     })
   })
 
-  describe(`head(array, howManyItems)`, () => {
+  describe(`head(numbers: Array<Number>, howManyItems: Number): Array<Number>`, () => {
     it(`returns an empty array by default`, () => {
       const actual = head([])
       const expected = []
@@ -51,7 +51,7 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`squareItems(array)`, () => {
+  describe(`squareItems(numbers: Array<Number>)`, () => {
     it(`returns empty array by default`, () => {
       expect(squareItems([])).to.eql([])
     })
@@ -71,7 +71,7 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`arrayContainsOddNumbers(array)`, () => {
+  describe(`arrayContainsOddNumbers(numbers: Array<Number>): Boolean`, () => {
     it(`returns false by default`, () => {
       expect(arrayContainsOddNumbers([])).to.eql(false)
     })
@@ -89,7 +89,7 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`compact(array)`, () => {
+  describe(`compact(arr: Array<Any>): Array<Any>`, () => {
     it(`returns empty array by default`, () => {
       expect(compact([])).to.eql([])
     })
@@ -113,7 +113,7 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`drop(array, numberOfItemsToDrop)`, () => {
+  describe(`drop(nums: Array<Number>, numItemsToDrop: Number): Array<Number>`, () => {
     it(`returns an empty array by default`, () => {
       const actual = drop([])
       const expected = []
@@ -139,7 +139,7 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`findFirstEvenNumber(array)`, () => {
+  describe(`findFirstEvenNumber(numbers: Array<Number>): Number`, () => {
     it(`returns undefined by default`, () => {
       expect(findFirstEvenNumber([])).to.eql(undefined)
     })
@@ -157,7 +157,7 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`tail(array, howManyItems)`, () => {
+  describe(`tail(numbers: Array<Number>, howManyItems: Number): Array<Number>`, () => {
     it(`returns an empty array by default`, () => {
       const actual = tail([])
       const expected = []
@@ -183,25 +183,25 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`findMatchingIndex2(array, itemToFind)`, () => {
+  describe(`findMatchingIndex(arry: Array<Any>, idx: Number): Any`, () => {
     it(`returns -1 by default`, () => {
-      expect(findMatchingIndex2([])).to.eql(-1)
+      expect(findMatchingIndex([])).to.eql(-1)
     })
 
     it(`returns 0 when item is at first position`, () => {
-      expect(findMatchingIndex2(['foo'], 'foo')).to.eql(0)
-      expect(findMatchingIndex2([9], 9)).to.eql(0)
-      expect(findMatchingIndex2([321], 321)).to.eql(0)
+      expect(findMatchingIndex(['foo'], 'foo')).to.eql(0)
+      expect(findMatchingIndex([9], 9)).to.eql(0)
+      expect(findMatchingIndex([321], 321)).to.eql(0)
     })
 
     it(`returns 2 when item is at third position`, () => {
-      expect(findMatchingIndex2([0, 1, 'foo'], 'foo')).to.eql(2)
-      expect(findMatchingIndex2([11, 10, 9], 9)).to.eql(2)
-      expect(findMatchingIndex2([123, 456, 321, 890, 567], 321)).to.eql(2)
+      expect(findMatchingIndex([0, 1, 'foo'], 'foo')).to.eql(2)
+      expect(findMatchingIndex([11, 10, 9], 9)).to.eql(2)
+      expect(findMatchingIndex([123, 456, 321, 890, 567], 321)).to.eql(2)
     })
   })
 
-  describe(`multiplyItemsBy(array, multiplier)`, () => {
+  describe(`multiplyItemsBy(nums: Array<Number>, multiplier: Number): Array<Number>`, () => {
     it(`returns empty array by default`, () => {
       expect(multiplyItemsBy([])).to.eql([])
     })
@@ -221,7 +221,7 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`sortWordsByLength(array)`, () => {
+  describe(`sortWordsByLength(strings: Array<String>): Array<String>`, () => {
     it(`returns an empty array by default`, () => {
       const actual = sortWordsByLength([])
       const expected = []
@@ -253,31 +253,31 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`all2(array, thingToMatch)`, () => {
+  describe(`all(number: Array<Any>, thingToMatch: Any): Boolean`, () => {
     it(`returns false by default`, () => {
-      expect(all2([])).to.eql(true)
+      expect(all([])).to.eql(true)
     })
 
     it(`returns true when item is in the array`, () => {
-      expect(all2(['foo'], 'foo')).to.eql(true)
-      expect(all2([9], 9)).to.eql(true)
-      expect(all2([321], 321)).to.eql(true)
+      expect(all(['foo'], 'foo')).to.eql(true)
+      expect(all([9], 9)).to.eql(true)
+      expect(all([321], 321)).to.eql(true)
     })
 
     it(`returns false when some items aren't the same as item to check`, () => {
-      expect(all2([0, 1, 'foo'], 'foo')).to.eql(false)
-      expect(all2([11, 10, 9], 9)).to.eql(false)
-      expect(all2([123, 456, 321], 321)).to.eql(false)
+      expect(all([0, 1, 'foo'], 'foo')).to.eql(false)
+      expect(all([11, 10, 9], 9)).to.eql(false)
+      expect(all([123, 456, 321], 321)).to.eql(false)
     })
 
     it(`returns true when all items are the same as item to check`, () => {
-      expect(all2(['foo', 'foo', 'foo'], 'foo')).to.eql(true)
-      expect(all2([9, 9, 9], 9)).to.eql(true)
-      expect(all2([321, 321, 321], 321)).to.eql(true)
+      expect(all(['foo', 'foo', 'foo'], 'foo')).to.eql(true)
+      expect(all([9, 9, 9], 9)).to.eql(true)
+      expect(all([321, 321, 321], 321)).to.eql(true)
     })
   })
 
-  describe(`omit(array, itemToOmit)`, () => {
+  describe(`omit(arr: Array<Any>, itemToOmit: Any): Array<Any>`, () => {
     it(`returns empty array by default`, () => {
       expect(omit([])).to.eql([])
     })
@@ -301,18 +301,18 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`getStringOfDivs2(array)`, () => {
+  describe(`getStringOfDivs(strings: Array<String>): String`, () => {
     it(`returns '' by default with an empty array`, () => {
-      expect(getStringOfDivs2([])).to.eql('')
+      expect(getStringOfDivs([])).to.eql('')
     })
 
     it(`returns '<div>' around supplied item`, () => {
-      expect(getStringOfDivs2(['foo'])).to.eql('<div>foo</div>')
+      expect(getStringOfDivs(['foo'])).to.eql('<div>foo</div>')
     })
 
     it(`returns '<div>' around multiple supplied items`, () => {
       expect(
-        getStringOfDivs2(['foo', 'bar', 'herp', 'derp'])
+        getStringOfDivs(['foo', 'bar', 'herp', 'derp'])
       ).to.eql(
         '<div>foo</div>' +
         '<div>bar</div>' +
@@ -322,32 +322,32 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`getArrayTotal2(array)`, () => {
+  describe(`getArrayTotal(numbers: Array<Number>): Number`, () => {
     it(`returns 0 by default with an empty array`, () => {
-      expect(getArrayTotal2([])).to.eql(0)
+      expect(getArrayTotal([])).to.eql(0)
     })
 
     it(`if only 1 item, returns it`, () => {
-      expect(getArrayTotal2([1])).to.eql(1)
-      expect(getArrayTotal2([6])).to.eql(6)
-      expect(getArrayTotal2([8])).to.eql(8)
-      expect(getArrayTotal2([800])).to.eql(800)
-      expect(getArrayTotal2([123])).to.eql(123)
+      expect(getArrayTotal([1])).to.eql(1)
+      expect(getArrayTotal([6])).to.eql(6)
+      expect(getArrayTotal([8])).to.eql(8)
+      expect(getArrayTotal([800])).to.eql(800)
+      expect(getArrayTotal([123])).to.eql(123)
     })
 
     it(`returns total of two items`, () => {
-      expect(getArrayTotal2([1, 1])).to.eql(2)
-      expect(getArrayTotal2([4, 5])).to.eql(9)
-      expect(getArrayTotal2([10000, 10000])).to.eql(20000)
+      expect(getArrayTotal([1, 1])).to.eql(2)
+      expect(getArrayTotal([4, 5])).to.eql(9)
+      expect(getArrayTotal([10000, 10000])).to.eql(20000)
     })
 
     it(`returns total of multiple items`, () => {
-      expect(getArrayTotal2([1, 1, 2, 3, 5, 6])).to.eql(18)
-      expect(getArrayTotal2([10, 10, 10, 10])).to.eql(40)
+      expect(getArrayTotal([1, 1, 2, 3, 5, 6])).to.eql(18)
+      expect(getArrayTotal([10, 10, 10, 10])).to.eql(40)
     })
   })
 
-  describe(`pick(arrayOfObjects, property)`, () => {
+  describe(`pick(objects: Array<Object>, property: String): Array<Any>`, () => {
     it(`returns an empty array by default`, () => {
       expect(pick([])).to.eql([])
     })
@@ -387,14 +387,14 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`getShoppingListTotalPrice2(shoppingListArray)`, () => {
+  describe(`getShoppingListTotalPrice(shoppingList: Array<Object>): Number`, () => {
     it(`returns 0 by default with an empty array`, () => {
-      expect(getShoppingListTotalPrice2([])).to.eql(0)
+      expect(getShoppingListTotalPrice([])).to.eql(0)
     })
 
     it(`returns item price when only one item`, () => {
       const items = [{ price: 999 }]
-      expect(getShoppingListTotalPrice2(items)).to.eql(999)
+      expect(getShoppingListTotalPrice(items)).to.eql(999)
     })
 
     it(`returns total of all item's prices`, () => {
@@ -403,11 +403,11 @@ describe(`Array methods`, () => {
         { price: 123 },
         { price: 321 }
       ]
-      expect(getShoppingListTotalPrice2(items)).to.eql(1443)
+      expect(getShoppingListTotalPrice(items)).to.eql(1443)
     })
   })
 
-  describe(`getStringOfElements(array, element)`, () => {
+  describe(`getStringOfElements(strings: Array<String>, element: String): String`, () => {
     it(`returns '' by default with an empty array`, () => {
       expect(getStringOfElements([])).to.eql('')
     })
@@ -428,27 +428,27 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`getMeanAverage2(array)`, () => {
+  describe(`getMeanAverage(numbers: Array<Number>): Number`, () => {
     it(`returns 0 by default`, () => {
-      expect(getMeanAverage2([])).to.eql(0)
+      expect(getMeanAverage([])).to.eql(0)
     })
 
     it(`returns item when an array of 1 item`, () => {
-      expect(getMeanAverage2([1])).to.eql(1)
-      expect(getMeanAverage2([3])).to.eql(3)
-      expect(getMeanAverage2([99])).to.eql(99)
-      expect(getMeanAverage2([104])).to.eql(104)
+      expect(getMeanAverage([1])).to.eql(1)
+      expect(getMeanAverage([3])).to.eql(3)
+      expect(getMeanAverage([99])).to.eql(99)
+      expect(getMeanAverage([104])).to.eql(104)
     })
 
     it(`returns mean average when an array of multiple items`, () => {
-      expect(getMeanAverage2([0, 1])).to.eql(0.5)
-      expect(getMeanAverage2([1, 1, 1, 1])).to.eql(1)
-      expect(getMeanAverage2([3, 4, 5, 6, 7])).to.eql(5)
-      expect(getMeanAverage2([150, 0, 200, 100, 50])).to.eql(100)
+      expect(getMeanAverage([0, 1])).to.eql(0.5)
+      expect(getMeanAverage([1, 1, 1, 1])).to.eql(1)
+      expect(getMeanAverage([3, 4, 5, 6, 7])).to.eql(5)
+      expect(getMeanAverage([150, 0, 200, 100, 50])).to.eql(100)
     })
   })
 
-  describe(`countItemsMatching(array, thingToCountBy)`, () => {
+  describe(`countItemsMatching(arry: Array<Any>, thingToCountBy: Any): Number`, () => {
     it(`returns 0 by default`, () => {
       expect(countItemsMatching([])).to.eql(0)
     })
@@ -472,7 +472,7 @@ describe(`Array methods`, () => {
     })
   })
 
-  describe(`areAllItemsUnique(array)`, () => {
+  describe(`areAllItemsUnique(arry: Array<Any>): Boolean`, () => {
     it(`returns true by default`, () => {
       expect(areAllItemsUnique([])).to.eql(true)
     })

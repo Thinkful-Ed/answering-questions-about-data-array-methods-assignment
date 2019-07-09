@@ -21,8 +21,8 @@
  * @param {string or number} thingToFind
  * @returns {boolean} true if the array contains the thing to find, false otherwise
  */
-function arrayIncludes2(array, thingToFind) {
-  return array.includes(thingToFind)
+function arrayIncludes(array, thingToFind) {
+  return array.includes(thingToFind);
 }
 
 /**
@@ -42,7 +42,7 @@ function arrayIncludes2(array, thingToFind) {
  * @returns {array} containing the `howManyItems` of items at the start of the array.
  */
 function head(array, howManyItems) {
-  return array.slice(0, howManyItems)
+  return array.slice(0, howManyItems);
 }
 
 /**
@@ -60,9 +60,7 @@ function head(array, howManyItems) {
  * @returns {array} where each number is the square of the original array.
  */
 function squareItems(array) {
-  return array.map(function (item) {
-    return item ** 2
-  })
+  return array.map(item => item ** 2);
 }
 
 /**
@@ -80,9 +78,7 @@ function squareItems(array) {
  * @returns {boolean} true if the array contains any odd numbers
  */
 function arrayContainsOddNumbers(array) {
-  return array.some(function (item) {
-    return item % 2 === 1
-  })
+  return array.some(item => item % 2 === 1);
 }
 
 /**
@@ -100,13 +96,7 @@ function arrayContainsOddNumbers(array) {
  * @returns {array} where all the falsey values have been removed
  */
 function compact(array) {
-  return array.filter(function (item) {
-    if (item) {
-      return true
-    } else {
-      return false
-    }
-  })
+  return array.filter(item => !!(item));
   // return array.filter(Boolean)
 }
 
@@ -127,7 +117,7 @@ function compact(array) {
  * @returns {array} where the first `numberOfItemsToDrop` have been removed
  */
 function drop(array, numberOfItemsToDrop) {
-  return array.slice(numberOfItemsToDrop, array.length)
+  return array.slice(numberOfItemsToDrop, array.length);
 }
 
 /**
@@ -144,9 +134,7 @@ function drop(array, numberOfItemsToDrop) {
  * @returns {number} first even number that was found withing the array
  */
 function findFirstEvenNumber(array) {
-  return array.find(function (item) {
-    return item % 2 === 0
-  })
+  return array.find(item => item % 2 === 0);
 }
 
 /**
@@ -165,7 +153,7 @@ function tail(array, howManyItems) {
   return array.slice(
     array.length - howManyItems,
     array.length
-  )
+  );
 }
 
 /**
@@ -182,10 +170,8 @@ function tail(array, howManyItems) {
  * @param {string or number} valueToFind within the
  * @returns {number} the index number of the location of the valueToFind OR `-1` if the value isn't found.
  */
-function findMatchingIndex2(array, itemToFind) {
-  return array.findIndex(function (item) {
-    return item === itemToFind
-  })
+function findMatchingIndex(array, itemToFind) {
+  return array.findIndex(item => item === itemToFind);
 }
 
 /**
@@ -204,9 +190,7 @@ function findMatchingIndex2(array, itemToFind) {
  * @returns {array} where each number is the multiplier multiplied by the item of the original array
  */
 function multiplyItemsBy(array, multiplier) {
-  return array.map(function (item) {
-    return item * multiplier
-  })
+  return array.map(item => item * multiplier);
 }
 
 /**
@@ -224,9 +208,7 @@ function multiplyItemsBy(array, multiplier) {
  * @returns {array} original array where strings are organised from shortest length to longest
  */
 function sortWordsByLength(array) {
-  return array.sort(function(a, b) {
-    return a.length - b.length
-  })
+  return array.sort((a, b) => a.length - b.length);
 }
 
 /**
@@ -243,10 +225,8 @@ function sortWordsByLength(array) {
  * @param {string or number} thingToMatch at each position in the array
  * @returns {boolean} true if all of the items in the array are the same as the `thingToMatch`, false otherwise.
  */
-function all2(array, thingToMatch) {
-  return array.every(function (item) {
-    return item === thingToMatch
-  })
+function all(array, thingToMatch) {
+  return array.every(item => item === thingToMatch);
 }
 
 /**
@@ -264,9 +244,7 @@ function all2(array, thingToMatch) {
  * @returns {array} where all occurances of the `itemToOmit` have been removed.
  */
 function omit(array, itemToOmit) {
-  return array.filter(function (item) {
-    return item !== itemToOmit
-  })
+  return array.filter(item => item !== itemToOmit);
 }
 
 /**
@@ -295,12 +273,10 @@ function omit(array, itemToOmit) {
  * @param {array of strings} arr array containing strings to put in divs
  * @returns {string} items wrapped in divs
  */
-function getStringOfDivs2(array) {
-  const arrayOfDivs = array.map(function (item) {
-    return `<div>${item}</div>`
-  })
+function getStringOfDivs(array) {
+  const arrayOfDivs = array.map(item => `<div>${item}</div>`);
 
-  return arrayOfDivs.join('')
+  return arrayOfDivs.join('');
 }
 
 /**
@@ -320,14 +296,14 @@ function getStringOfDivs2(array) {
  * @param {array of numbers} arr array containing items to sum
  * @returns {number} total of items in array
  */
-function getArrayTotal2(array) {
-  let total = 0
+function getArrayTotal(array) {
+  let total = 0;
 
-  array.forEach(function (item) {
-    total += item
-  })
+  array.forEach(item => {
+    total += item;
+  });
 
-  return total
+  return total;
 }
 
 /**
@@ -350,9 +326,7 @@ function getArrayTotal2(array) {
  * @returns {array} of values picked out of each object
  */
 function pick(arrayOfObjects, property) {
-  return arrayOfObjects.map(function (object) {
-    return object[property] || null
-  })
+  return arrayOfObjects.map(object => object[property] || null);
 }
 
 /**
@@ -381,14 +355,14 @@ function pick(arrayOfObjects, property) {
  * @param {array of numbers} arr array containing items to sum
  * @returns {number} total of items in array
  */
-function getShoppingListTotalPrice2(shoppingListArray) {
-  let total = 0
+function getShoppingListTotalPrice(shoppingListArray) {
+  let total = 0;
 
-  shoppingListArray.forEach(function (item) {
-    total += item.price
-  })
+  shoppingListArray.forEach(item => {
+    total += item.price;
+  });
 
-  return total
+  return total;
 }
 
 /**
@@ -422,11 +396,9 @@ function getShoppingListTotalPrice2(shoppingListArray) {
  * @returns {string} items wrapped in divs
  */
 function getStringOfElements(array, element) {
-  const arrayOfElements = array.map(function (item) {
-    return `<${element}>${item}</${element}>`
-  })
+  const arrayOfElements = array.map(item => `<${element}>${item}</${element}>`);
 
-  return arrayOfElements.join('')
+  return arrayOfElements.join('');
 }
 
 /**
@@ -444,14 +416,14 @@ function getStringOfElements(array, element) {
  * @param {array} array of numbers
  * @returns {number} the mean average of array numbers or `0`
  */
-function getMeanAverage2(array) {
-  let total = 0
+function getMeanAverage(array) {
+  let total = 0;
 
-  array.forEach(function (item) {
-    total += item
-  })
+  array.forEach(item => {
+    total += item;
+  });
 
-  return total / array.length || 0
+  return total / array.length || 0;
 }
 
 /**
@@ -468,13 +440,9 @@ function getMeanAverage2(array) {
  * @returns {number} number of occurances of the `thingToCountBy` in the array.
  */
 function countItemsMatching(array, thingToCountBy) {
-  const arrayOfMatchingItems = array.filter(function(item) {
-    if (item === thingToCountBy) {
-      return true
-    }
-  })
+  const arrayOfMatchingItems = array.filter(item => (item === thingToCountBy));
 
-  return arrayOfMatchingItems.length
+  return arrayOfMatchingItems.length;
 }
 
 /**
@@ -493,12 +461,8 @@ function countItemsMatching(array, thingToCountBy) {
  */
 function areAllItemsUnique(array) {
   return array.every(function (item) {
-    let uniqueArray = array.filter(function(j) {
-      if (j !== item) {
-        return true
-      }
-    })
+    const uniqueArray = array.filter(j => (j !== item));
 
-    return uniqueArray.length === (array.length - 1)
-  })
+    return uniqueArray.length === (array.length - 1);
+  });
 }
